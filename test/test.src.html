@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link href="./res/debug.css" rel="stylesheet" type="text/css"/>
+    <link href="../src/jMaper/misc/css/jMaper.css" rel="stylesheet" type="text/css"/>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMagic/jMagic.gis.min.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMagic/jMagic.graphic.min.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/jMaper.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/lang/en.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/lang/zh_Hans.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/lang/zh_Hant.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/base/Event.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/base/Pixel.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/base/Coord.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/base/Bound.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/base/Layer.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/base/Decor.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/core/Geog.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plat/Tile.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plat/Vect.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/core/Geom.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plot/Line.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plot/Poly.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plot/Rect.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plot/Oval.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plot/Arch.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plot/Wave.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plot/Icon.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plot/Text.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/core/Note.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/core/Mark.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/core/Tips.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/Await.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/Genre.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/Slide.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/Scale.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/Eagle.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/Popup.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/Tools.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/Menus.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/plug/About.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/Puzzle.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/ogc/Gml.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/ogc/Kml.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/ogc/Wcs.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/ogc/Wms.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/ogc/Wmts.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/ogc/Rest.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/arc/ArcIMS.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/arc/ArcGISRest.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/norm/arc/ArcGISCache.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/Amap.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/Bing.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/Soso.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/Geoq.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/Baidu.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/Google.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/Mapabc.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/MapWorld.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="../src/jMaper/protocol/ArcGISOnline.js"></script>
+    <script language="JavaScript" type="text/javascript" async="true" src="./res/debug.js"></script>
+    <title>JMaper Engine Tester</title>
+</head>
+<body>
+    <div id="jMaper"></div>
+</body>
+</html>

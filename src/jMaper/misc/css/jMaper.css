@@ -1,0 +1,1180 @@
+@charset "utf-8";
+
+div.jMaper, div.jMaper * {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: STHeiti, simsun, Arial, sans-serif;
+}
+
+div.jMaper {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    background-color: #e5e3df;
+}
+
+div.jMaper div.j-canvas- {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div,
+div.jMaper div.j-canvas- img {
+    border: 0 none;
+}
+
+/* Maper Style */
+div.jMaper div.j-canvas- div.j-maper- {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tile-,
+div.jMaper div.j-canvas- div.j-maper- div.j-pile-,
+div.jMaper div.j-canvas- div.j-maper- div.j-note-,
+div.jMaper div.j-canvas- div.j-maper- div.j-draw-,
+div.jMaper div.j-canvas- div.j-maper- div.j-mark-,
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Tile Style */
+div.jMaper div.j-canvas- div.j-maper- div.j-tile- {
+    z-index: 110;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tile- div {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tile- div img {
+    position: absolute;
+    overflow: hidden;
+}
+
+/* Pile Style */
+div.jMaper div.j-canvas- div.j-maper- div.j-pile- {
+    z-index: 120;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-pile- div {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-pile- div img {
+    position: absolute;
+    overflow: hidden;
+}
+
+/* Note Style */
+div.jMaper div.j-canvas- div.j-maper- div.j-note- {
+    z-index: 130;
+}
+
+/* Draw Style */
+div.jMaper div.j-canvas- div.j-maper- div.j-draw- {
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    z-index: 140;
+}
+
+/* Mark Style */
+div.jMaper div.j-canvas- div.j-maper- div.j-mark- {
+    z-index: 150;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-mark- div {
+    position: absolute;
+    text-align: center;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-mark- div ul.j-mark-label-,
+div.jMaper div.j-canvas- div.j-maper- div.j-mark- div ul.j-mark-image- {
+    cursor: default;
+    list-style: none;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-mark- div ul.j-mark-image- {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-mark- div ul.j-mark-label- li {
+    white-space: nowrap;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-mark- div ul.j-mark-image- li {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+/* Tips Style */
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- {
+    z-index: 160;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- {
+    position: absolute;
+    text-align: center;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-ctrl-,
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-shut- {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-ctrl- div {
+    margin-top: 0;
+    margin-left: -24px;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-shut- div {
+    margin-top: 0;
+    margin-left: -37px;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-head-,
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-main- {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: default;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-head- {
+    width: 100%;
+    height: 28px;
+    text-align: left;
+    border: 1px solid #67687d;
+    background-color: #f9f9f9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-head- div {
+    height: 28px;
+    margin-left: 8px;
+    line-height: 28px;
+    white-space: nowrap;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-main- div.j-tips-body- {
+    overflow: hidden;
+    text-align: left;
+    border-left: 1px solid #67687d;
+    border-right: 1px solid #67687d;
+    border-bottom: 1px solid #67687d;
+    background-color: #ffffff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-main- div.j-tips-body- div.j-tips-info- {
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-main- div.j-tips-body- div.j-tips-info- iframe {
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-main- div.j-tips-foot- {
+    width: 23px;
+    height: 12px;
+    overflow: hidden;
+    margin-top: -1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-main- div.j-tips-foot- div {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-ctrl- div,
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-shut- div,
+div.jMaper div.j-canvas- div.j-maper- div.j-tips- div.j-tips-html- div.j-tips-main- div.j-tips-foot- div {
+    width: 49px;
+    height: 12px;
+    background: url(../ico/basic/tips.png) no-repeat;
+    /* IE6 */
+    _background: none;
+    _filter: expression("progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=corp, src='" + jMagic.root + "misc/ico/basic/tips.png')");
+}
+
+/* Menus Style */
+div.jMaper div.j-canvas- div.j-menus- {
+    position: absolute;
+    z-index: 20;
+}
+
+div.jMaper div.j-canvas- div.j-menus- div {
+    position: absolute;
+    cursor: pointer;
+    border: 1px solid #a1a0a3;
+}
+
+div.jMaper div.j-canvas- div.j-menus- div ul {
+    clear: both;
+    height: 24px;
+    overflow: hidden;
+    list-style-type: none;
+    background: #f9f9f9 no-repeat 4px 4px;
+}
+
+div.jMaper div.j-canvas- div.j-menus- div ul li {
+    float: left;
+    height: 24px;
+    display: inline;
+    margin-left: 24px;
+    line-height: 24px;
+    white-space: nowrap;
+    border-style: solid;
+    border-color: #a1a0a3;
+    border-width: 0 0 0 1px;
+}
+
+div.jMaper div.j-canvas- div.j-menus- div ul li a {
+    float: left;
+    height: 22px;
+    overflow: hidden;
+    padding: 0 10px 0 10px;
+    text-decoration: none;
+}
+
+div.jMaper div.j-canvas- div.j-menus- div ul li a:hover {
+    border-style: dotted;
+    border-color: #c5c5c5;
+    border-width: 1px 0 1px 0;
+    background-color: #d6e9f8;
+}
+
+/* About Style */
+div.jMaper div.j-canvas- div.j-about- {
+    position: absolute;
+    color: #67687d;
+    bottom: 0;
+    z-index: 30;
+}
+
+/* Eagle Style */
+div.jMaper div.j-canvas- div.j-eagle- {
+    position: absolute;
+    z-index: 40;
+    bottom: -5px;
+    border: 1px solid #a1a0a3;
+    background-color: #f7f7f5;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- {
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    margin: 3px 3px;
+    border: 1px solid #a1a0a3;
+    background-color: #e5e3df;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-eye-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-box-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-box- div.j-eagle-see- {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-eye-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-box- div.j-eagle-see- {
+    border: 2px solid #0a6a9a;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-box- div.j-eagle-see- div {
+    width: 100%;
+    height: 100%;
+    background-color: #0a6a9a;
+    filter: alpha(opacity=25);
+    opacity: 0.25;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-box- div.j-eagle-map- {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-box- div.j-eagle-map- div {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-view- div.j-eagle-box- div.j-eagle-map- div img {
+    position: absolute;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib2l-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib4l-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob2l-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob4l-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib2r-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib4r-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob2r-,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob4r- {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    bottom: 4px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib2l- div {
+    top: -37px;
+    left: -19px;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib4l- div {
+    top: -56px;
+    left: -19px;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob2l- div {
+    top: 0;
+    left: -19px;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob4l- div {
+    top: -19px;
+    left: -19px;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib2r- div {
+    top: -37px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib4r- div {
+    top: -56px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob2r- div {
+    top: 0;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob4r-  div {
+    top: -19px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib2l- div,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib4l- div,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob2l- div,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob4l- div,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib2r- div,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ib4r- div,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob2r- div,
+div.jMaper div.j-canvas- div.j-eagle- div.j-eagle-ob4r- div {
+    position: absolute;
+    width: 37px;
+    height: 75px;
+    background: url(../ico/eagle/eagle.png) no-repeat;
+    /* IE6 */
+    _background: none;
+    _filter: expression("progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=corp, src='" + jMagic.root + "misc/ico/eagle/eagle.png')");
+}
+
+/* Scale Style */
+div.jMaper div.j-canvas- div.j-scale- {
+    position: absolute;
+    bottom: 18px;
+    z-index: 50;
+}
+
+div.jMaper div.j-canvas- div.j-scale- * {
+    cursor: default;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-scale- div {
+    height: 5px;
+    border-left: 3px solid #000000;
+    border-right: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+}
+
+div.jMaper div.j-canvas- div.j-scale- div span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 5px;
+    text-align: center;
+    font-weight: bolder;
+    white-space: nowrap;
+}
+
+/* Slide Style */
+div.jMaper div.j-canvas- div.j-slide- {
+    position: absolute;
+    top: 8px;
+    z-index: 60;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div {
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p2e-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p2s-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p2w-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p2n- {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p2e- {
+    top: 28px;
+    left: 34px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p2s- {
+    top: 44px;
+    left: 18px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p2w- {
+    top: 28px;
+    left: 2px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p2n- {
+    top: 12px;
+    left: 18px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-pan-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4e-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4s-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4w-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4n- {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 52px;
+    margin-top: 10px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-pan- div {
+    top: -236px;
+    left: -2px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4e- div {
+    top: -448px;
+    left: -2px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4s- div {
+    top: -342px;
+    left: -2px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4w- div {
+    top: -395px;
+    left: -2px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4n- div {
+    top: -289px;
+    left: -2px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-pin-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmi-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmo-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4h-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-i4h-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-o4h- {
+    position: relative;
+    top: 0;
+    left: 17px;
+    width: 18px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-pin-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmi-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmo-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4h-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-i4h-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-o4h- {
+    height: 18px;
+    cursor: pointer;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-pin-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmi-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4h-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-i4h- {
+    margin-top: 10px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-pin- div {
+    top: -501px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4h- div {
+    top: -520px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmi- div {
+    top: -501px;
+    left: -19px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-i4h- div {
+    top: -520px;
+    left: -19px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmo- div {
+    top: -501px;
+    left: -38px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-o4h- div {
+    top: -520px;
+    left: -38px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-pick- {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 6px;
+    height: 100%;
+    cursor: pointer;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-ctrl-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-slip- {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 7px;
+    cursor: pointer;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-ctrl- div {
+    top: -220px;
+    left: -38px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-slip- div {
+    top: -228px;
+    left: -38px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-pick- div.j-slide-bar-base-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-pick- div.j-slide-bar-mask- {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-pick- div.j-slide-bar-base- div {
+    top: 0;
+    left: -38px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-pick- div.j-slide-bar-mask- div {
+    top: 0;
+    left: -50px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2pin-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2zmi-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2zmo-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2p4h-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2i4h-,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2o4h- {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2pin- div {
+    top: 0;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2zmi- div {
+    top: -80px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2zmo- div {
+    top: -160px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2p4h- div {
+    top: -40px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2i4h- div {
+    top: -120px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2o4h- div {
+    top: -200px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-pan- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4e- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4s- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4w- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4n- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-pin- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmi- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-zmo- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-p4h- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-i4h- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-o4h- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2pin- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2zmi- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2zmo- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2p4h- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2i4h- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide2o4h- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-ctrl- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-slip- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-pick- div.j-slide-bar-base- div,
+div.jMaper div.j-canvas- div.j-slide- div.j-slide-bar- div.j-slide-bar-pick- div.j-slide-bar-mask- div {
+    position: absolute;
+    width: 56px;
+    height: 538px;
+    background: url(../ico/slide/slide.png) no-repeat;
+    /* IE6 */
+    _background: none;
+    _filter: expression("progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=corp, src='" + jMagic.root + "misc/ico/slide/slide.png')");
+}
+
+/* Tools Style */
+div.jMaper div.j-canvas- div.j-tools- {
+    position: absolute;
+    top: 98px;
+    z-index: 70;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left-,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- {
+    position: absolute;
+    overflow: hidden;
+    top: 45px;
+    width: 177px;
+    height: 59px;
+    border: 1px solid #0a6a9a;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- {
+    left: 0;
+    border-top-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- {
+    right: 0;
+    border-top-left-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a {
+    width: 59px;
+    height: 59px;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: #f7f7f5;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a {
+    float: right;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a {
+    float: left;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a:last-child {
+    border-bottom-left-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a:first-child {
+    border-top-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a:first-child {
+    border-top-left-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a:nth-last-child(3) {
+    border-bottom-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a:nth-last-child(3) {
+    border-bottom-left-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-mis-,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-sel-,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-mis-,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-sel- {
+    position: relative;
+    top: 3px;
+    left: 3px;
+    width: 53px;
+    height: 53px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-mis- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-mis- div {
+    top: 0;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a:hover div.j-tools-mis- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a:hover div.j-tools-mis- div {
+    top: 0;
+    left: -90px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-sel- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-sel- div {
+    top: -54px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a:hover div.j-tools-sel- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a:hover div.j-tools-sel- div {
+    top: -54px;
+    left: -90px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-mis- img,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-sel- img,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-mis- img,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-sel- img {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    width: 21px;
+    height: 21px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-mis- span,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-sel- span,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-mis- span,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-sel- span {
+    position: absolute;
+    top: 36px;
+    left: 1px;
+    width: 51px;
+    height: 16px;
+    display: block;
+    overflow: hidden;
+    line-height: 16px;
+    text-align: center;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-mis- span,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-mis- span {
+    color: #000000;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-sel- span,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-sel- span {
+    color: #0000ff;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-btn-,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-b4h- {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-btn- span,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-b4h- span {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-btn- span img,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-b4h- span img {
+    width: 21px;
+    height: 21px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-btn- div {
+    top: -18px;
+    left: -54px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-b4h- div {
+    top: -54px;
+    left: -54px;
+}
+
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-btn- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-b4h- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-mis- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-left- a div.j-tools-sel- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-mis- div,
+div.jMaper div.j-canvas- div.j-tools- div.j-tools-right- a div.j-tools-sel- div {
+    position: absolute;
+    width: 143px;
+    height: 107px;
+    background: url(../ico/tools/tools.png) no-repeat;
+    /* IE6 */
+    _background: none;
+    _filter: expression("progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=corp, src='" + jMagic.root + "misc/ico/tools/tools.png')");
+}
+
+/* Genre Style */
+div.jMaper div.j-canvas- div.j-genre- {
+    position: absolute;
+    top: 8px;
+    z-index: 80;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- {
+    position: absolute;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- {
+    left: 35px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- {
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-1px- {
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-1px- {
+    right: 0;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- {
+    left: 1px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- {
+    right: 1px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-1px-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-1px-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- {
+    position: absolute;
+    top: 0;
+    height: 33px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-1px-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-1px- {
+    width: 1px;
+    border-top: 1px solid #0a6a9a;
+    border-bottom: 1px solid #0a6a9a;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- {
+    width: 141px;
+    border: 1px solid #0a6a9a;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a:first-child {
+    border-top-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a:first-child {
+    border-top-left-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a:last-child {
+    border-bottom-left-radius: 5px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    text-align: left;
+    overflow: hidden;
+    line-height: 34px;
+    text-decoration: none;
+    border-bottom: 1px solid #0a6a9a;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-1px- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-1px- div {
+    width: 141px;
+    height: 33px;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    overflow: hidden;
+    background-color: #f7f7f5;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a:hover,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a:hover {
+    background-color: #ffffff;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a.j-genre-ctx-sel-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a.j-genre-ctx-sel- {
+    color: #0000ff;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a.j-genre-ctx-mis-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a.j-genre-ctx-mis- {
+    color: #000000;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-map-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-m2s-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-lap-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-l2s-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-l2x-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-map-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-m2s-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-lap-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-l2s-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-l2x- {
+    position: relative;
+    top: 8px;
+    left: 8px;
+    float: left;
+    width: 17px;
+    height: 17px;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    overflow: hidden;
+    margin-right: 16px;
+    background-color: #f7f7f5;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-map- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-map- div {
+    top: 0;
+    left: -108px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-m2s- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-m2s- div {
+    top: -18px;
+    left: -108px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-lap- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-lap- div {
+    top: -36px;
+    left: -108px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-l2s- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-l2s- div {
+    top: -54px;
+    left: -108px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-l2x- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-l2x- div {
+    top: -54px;
+    left: -126px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-map-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-l4m-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-r4m-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-lap-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-l4l-,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-r4l- {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-map- div {
+    top: 0;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-l4m- div {
+    top: 0;
+    left: -72px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-r4m- div {
+    top: 0;
+    left: -36px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-lap- div {
+    top: -36px;
+    left: 0;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-l4l- div {
+    top: -36px;
+    left: -72px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-r4l- div {
+    top: -36px;
+    left: -36px;
+}
+
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-map- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-l4m- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-r4m- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-lap- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-l4l- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-r4l- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-map- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-m2s- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-lap- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-l2s- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-left- div.j-genre-ctx- a div.j-genre-ctx-l2x- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-map- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-m2s- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-lap- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-l2s- div,
+div.jMaper div.j-canvas- div.j-genre- div.j-genre-right- div.j-genre-ctx- a div.j-genre-ctx-l2x- div {
+    position: absolute;
+    width: 143px;
+    height: 71px;
+    background: url(../ico/genre/genre.png) no-repeat;
+    /* IE6 */
+    _background: none;
+    _filter: expression("progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=corp, src='" + jMagic.root + "misc/ico/genre/genre.png')");
+}
+
+/* Popup Style */
+div.jMaper div.j-canvas- div.j-popup- {
+    position: absolute;
+    z-index: 90;
+}
+
+/* Await Style */
+div.jMaper div.j-canvas- div.j-await- {
+    position: absolute;
+    z-index: 999999999;
+}

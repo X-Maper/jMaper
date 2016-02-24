@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GISEngine" basedir="." default="engine.compress">
+
+    <property name="engine.out" value="jMaper"/>
+
+    <property name="engine.bin" location="bin"/>
+    <property name="engine.lib" location="lib"/>
+    <property name="engine.src" location="src"/>
+    <property name="engine.buf" location="buf"/>
+
+    <property name="engine.compile" location="${engine.buf}/compile"/>
+    <property name="engine.compress" location="${engine.buf}/compress"/>
+
+    <property name="engine.compile.jar" location="${engine.lib}/compiler.jar"/>
+    <property name="engine.compress.jar" location="${engine.lib}/compressor.jar"/>
+
+    <!-- Delete Dir -->
+    <target name="delete.dir">
+        <delete dir="${engine.bin}"/>
+        <delete dir="${engine.buf}"/>
+    </target>
+
+    <target name="delete.buf">
+        <delete dir="${engine.buf}"/>
+    </target>
+
+    <!-- Insert Dir -->
+    <target name="insert.dir">
+        <copy todir="${engine.compress}">
+            <dirset dir="${engine.src}"/>
+        </copy>
+        <copy todir="${engine.compile}">
+            <dirset dir="${engine.src}"/>
+        </copy>
+        <copy todir="${engine.bin}">
+            <fileset dir="${engine.src}/jMagic">
+                <include name="**/*.png"/>
+                <include name="**/*.cur"/>
+            </fileset>
+            <fileset dir="${engine.src}/jMaper">
+                <include name="**/*.png"/>
+                <include name="**/*.cur"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Engine Compress -->
+    <target name="engine.compress.css" depends="insert.dir">
+        <apply executable="java" parallel="false" failonerror="true">
+            <fileset dir="${engine.src}" includes="**/*.css"/>
+            <arg line="-jar"/>
+            <arg path="${engine.compress.jar}"/>
+            <arg line="--charset UTF-8"/>
+            <srcfile/>
+            <arg line="-o"/>
+            <mapper type="glob" from="*.css" to="${engine.compress}/*.css"/>
+            <targetfile/>
+        </apply>
+    </target>
+
+    <target name="engine.compress.js" depends="engine.compress.css">
+        <apply executable="java" parallel="false" failonerror="true">
+            <fileset dir="${engine.src}" includes="**/*.js"/>
+            <arg line="-jar"/>
+            <arg path="${engine.compress.jar}"/>
+            <arg line="--charset UTF-8"/>
+            <srcfile/>
+            <arg line="-o"/>
+            <mapper type="glob" from="*.js" to="${engine.compress}/*.js"/>
+            <targetfile/>
+        </apply>
+    </target>
+
+    <target name="engine.compile.js" depends="engine.compress.js">
+        <apply executable="java" parallel="false" failonerror="true">
+            <fileset dir="${engine.compress}" includes="**/*.js"/>
+            <arg line="-jar"/>
+            <arg path="${engine.compile.jar}"/>
+            <arg line="--charset UTF-8"/>
+            <arg line="--js"/>
+            <srcfile/>
+            <arg line="--js_output_file"/>
+            <mapper type="glob" from="*.js" to="${engine.compile}/*.js"/>
+            <targetfile/>
+        </apply>
+    </target>
+
+    <!-- Engine Compile Package -->
+    <target name="engine.package.css" depends="engine.compile.js">
+        <concat destfile="${engine.bin}/misc/css/${engine.out}.min.css" encoding="UTF-8" fixlastline="false">
+            <filelist dir="${engine.compress}/jMaper">
+                <file name="misc/css/jMaper.css"/>
+            </filelist>
+        </concat>
+    </target>
+
+    <target name="engine.package.js" depends="engine.package.css">
+        <concat destfile="${engine.bin}/${engine.out}.min.js" encoding="UTF-8" fixlastline="false">
+            <filelist dir="${engine.compile}">
+                <!-- jMagic Package -->
+                <file name="jMagic/jMagic.gis.min.js"/>
+                <file name="jMagic/jMagic.graphic.min.js"/>
+                <!-- jMaper Package -->
+                <file name="jMaper/jMaper.js"/>
+                <file name="jMaper/lang/en.js"/>
+                <file name="jMaper/lang/zh_Hans.js"/>
+                <file name="jMaper/lang/zh_Hant.js"/>
+                <file name="jMaper/base/Event.js"/>
+                <file name="jMaper/base/Pixel.js"/>
+                <file name="jMaper/base/Coord.js"/>
+                <file name="jMaper/base/Bound.js"/>
+                <file name="jMaper/base/Layer.js"/>
+                <file name="jMaper/base/Decor.js"/>
+                <file name="jMaper/core/Geog.js"/>
+                <file name="jMaper/plat/Tile.js"/>
+                <file name="jMaper/plat/Vect.js"/>
+                <file name="jMaper/core/Geom.js"/>
+                <file name="jMaper/plot/Line.js"/>
+                <file name="jMaper/plot/Poly.js"/>
+                <file name="jMaper/plot/Rect.js"/>
+                <file name="jMaper/plot/Oval.js"/>
+                <file name="jMaper/plot/Arch.js"/>
+                <file name="jMaper/plot/Wave.js"/>
+                <file name="jMaper/plot/Icon.js"/>
+                <file name="jMaper/plot/Text.js"/>
+                <file name="jMaper/core/Note.js"/>
+                <file name="jMaper/core/Mark.js"/>
+                <file name="jMaper/core/Tips.js"/>
+                <file name="jMaper/plug/Await.js"/>
+                <file name="jMaper/plug/Genre.js"/>
+                <file name="jMaper/plug/Slide.js"/>
+                <file name="jMaper/plug/Scale.js"/>
+                <file name="jMaper/plug/Eagle.js"/>
+                <file name="jMaper/plug/Popup.js"/>
+                <file name="jMaper/plug/Tools.js"/>
+                <file name="jMaper/plug/Menus.js"/>
+                <file name="jMaper/plug/About.js"/>
+                <file name="jMaper/norm/Puzzle.js"/>
+                <file name="jMaper/norm/ogc/Gml.js"/>
+                <file name="jMaper/norm/ogc/Kml.js"/>
+                <file name="jMaper/norm/ogc/Wcs.js"/>
+                <file name="jMaper/norm/ogc/Wms.js"/>
+                <file name="jMaper/norm/ogc/Wmts.js"/>
+                <file name="jMaper/norm/ogc/Rest.js"/>
+                <file name="jMaper/norm/arc/ArcIMS.js"/>
+                <file name="jMaper/norm/arc/ArcGISRest.js"/>
+                <file name="jMaper/norm/arc/ArcGISCache.js"/>
+                <file name="jMaper/protocol/Amap.js"/>
+                <file name="jMaper/protocol/Bing.js"/>
+                <file name="jMaper/protocol/Soso.js"/>
+                <file name="jMaper/protocol/Geoq.js"/>
+                <file name="jMaper/protocol/Baidu.js"/>
+                <file name="jMaper/protocol/Google.js"/>
+                <file name="jMaper/protocol/Mapabc.js"/>
+                <file name="jMaper/protocol/MapWorld.js"/>
+                <file name="jMaper/protocol/ArcGISOnline.js"/>
+            </filelist>
+        </concat>
+    </target>
+
+    <!-- Run Compress -->
+    <target name="engine.compress" depends="delete.dir, engine.package.js, delete.buf"/>
+
+</project>
